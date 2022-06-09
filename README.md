@@ -4,7 +4,7 @@ Library    Selenium2Library
 
 Automation test and file Test Case Age Calculator Demo.xlsx
 
-Test Case
+Test Cases
 
 1.Open Browser http://qa-engineer-exercise.azurewebsites.net/
 
