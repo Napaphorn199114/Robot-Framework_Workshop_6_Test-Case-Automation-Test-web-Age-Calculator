@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220608 11:42:18.994" rpa="false" schemaversion="3">
+<suite id="s1" name="Age Calculator" source="D:\Advance_Robot_Python\Robot Framework_Workshop_5_manual test &amp; automated test web Age Calculator\age_calculator.robot">
+<test id="s1-t1" name="Open Browser" line="23">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220608 11:42:19.194" level="INFO">Opening browser 'Chrome' to base url 'http://qa-engineer-exercise.azurewebsites.net/'.</msg>
+<status status="PASS" starttime="20220608 11:42:19.192" endtime="20220608 11:42:21.060"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220608 11:42:21.061" endtime="20220608 11:42:21.203"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220608 11:42:21.204" endtime="20220608 11:42:21.206"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:19.192" endtime="20220608 11:42:21.209"/>
+</test>
+<test id="s1-t2" name="Age_01 User input valid birthday should work fine" line="28">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>02/02/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:21.218" level="INFO">Typing text '02/02/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:21.217" endtime="20220608 11:42:22.222"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:22.224" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:22.222" endtime="20220608 11:42:23.028"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:22.222" endtime="20220608 11:42:23.028"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:23.657" level="INFO">${result} = You're 12</msg>
+<status status="PASS" starttime="20220608 11:42:23.029" endtime="20220608 11:42:23.657"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>You're 12</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:23.657" endtime="20220608 11:42:23.657"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>You're 12</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220608 11:42:24.305" level="INFO">Current page contains text 'You're 12'.</msg>
+<status status="PASS" starttime="20220608 11:42:23.659" endtime="20220608 11:42:24.305"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>You're 12</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220608 11:42:24.305" endtime="20220608 11:42:24.307"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${result}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220608 11:42:24.307" endtime="20220608 11:42:24.308"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:24.309" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:24.309" endtime="20220608 11:42:25.105"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:24.308" endtime="20220608 11:42:25.105"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:21.215" endtime="20220608 11:42:25.105"/>
+</test>
+<test id="s1-t3" name="Age_02 Verify content on the page should display correctly" line="38">
+<kw name="Get Title" library="Selenium2Library">
+<var>${title name}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220608 11:42:25.409" level="INFO">${title name} = Age Calculator Demo</msg>
+<status status="PASS" starttime="20220608 11:42:25.107" endtime="20220608 11:42:25.409"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title name}</arg>
+<arg>Age Calculator Demo</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:25.409" endtime="20220608 11:42:25.409"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${title name}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220608 11:42:25.409" endtime="20220608 11:42:25.409"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Enter Your Birthday</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220608 11:42:26.023" level="INFO">Current page contains text 'Enter Your Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:25.409" endtime="20220608 11:42:26.023"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Your birthday won't be stored or shared with anyone.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220608 11:42:26.651" level="INFO">Current page contains text 'Your birthday won't be stored or shared with anyone.'.</msg>
+<status status="PASS" starttime="20220608 11:42:26.023" endtime="20220608 11:42:26.651"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220608 11:42:26.953" level="INFO">Current page contains element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:26.651" endtime="20220608 11:42:26.953"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:25.106" endtime="20220608 11:42:26.953"/>
+</test>
+<test id="s1-t4" name="Age_03 The customer put birthday with TH language" line="46">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>1-มี.ค.-10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:26.953" level="INFO">Typing text '1-มี.ค.-10' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:26.953" endtime="20220608 11:42:27.978"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:27.979" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:27.978" endtime="20220608 11:42:29.097"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:27.978" endtime="20220608 11:42:29.097"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:29.742" level="INFO">${result} = The string '1-มี.ค.-10' was not recognized as a valid DateTime. There is an unknown word starting at index '2'.</msg>
+<status status="PASS" starttime="20220608 11:42:29.098" endtime="20220608 11:42:29.742"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>The string '1-มี.ค.-10' was not recognized as a valid DateTime. There is an unknown word starting at index '2'.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:29.743" endtime="20220608 11:42:29.744"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:29.747" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:29.746" endtime="20220608 11:42:30.611"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:29.745" endtime="20220608 11:42:30.611"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:26.953" endtime="20220608 11:42:30.611"/>
+</test>
+<test id="s1-t5" name="Age_04 The customer put birthday with invalid more than a day should error" line="53">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>32/01/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:30.613" level="INFO">Typing text '32/01/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:30.613" endtime="20220608 11:42:31.615"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:31.616" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:31.616" endtime="20220608 11:42:33.070"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:31.615" endtime="20220608 11:42:33.071"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:33.729" level="INFO">${result} = String '32/01/2010' was not recognized as a valid DateTime.</msg>
+<status status="PASS" starttime="20220608 11:42:33.072" endtime="20220608 11:42:33.729"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>String '32/01/2010' was not recognized as a valid DateTime.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:33.729" endtime="20220608 11:42:33.730"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:33.731" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:33.730" endtime="20220608 11:42:34.601"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:33.730" endtime="20220608 11:42:34.601"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:30.612" endtime="20220608 11:42:34.602"/>
+</test>
+<test id="s1-t6" name="Age_05 The customer put birthday with invalid deduct day should error" line="60">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>-1/01/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:34.607" level="INFO">Typing text '-1/01/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:34.606" endtime="20220608 11:42:35.610"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:35.610" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:35.610" endtime="20220608 11:42:36.945"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:35.610" endtime="20220608 11:42:36.945"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:37.599" level="INFO">${result} = String '-1/01/2010' was not recognized as a valid DateTime.</msg>
+<status status="PASS" starttime="20220608 11:42:36.945" endtime="20220608 11:42:37.599"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>String '-1/01/2010' was not recognized as a valid DateTime.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:37.600" endtime="20220608 11:42:37.600"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:37.600" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:37.600" endtime="20220608 11:42:38.832"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:37.600" endtime="20220608 11:42:38.833"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:34.605" endtime="20220608 11:42:38.834"/>
+</test>
+<test id="s1-t7" name="Age_06 The customer put birthday with a valid day should work fine" line="67">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>31/01/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:38.837" level="INFO">Typing text '31/01/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:38.836" endtime="20220608 11:42:39.888"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:39.888" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:39.888" endtime="20220608 11:42:40.696"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:39.888" endtime="20220608 11:42:40.696"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:41.332" level="INFO">${result} = You're 12</msg>
+<status status="PASS" starttime="20220608 11:42:40.696" endtime="20220608 11:42:41.332"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>You're 12</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:41.332" endtime="20220608 11:42:41.332"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:41.332" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:41.332" endtime="20220608 11:42:42.087"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:41.332" endtime="20220608 11:42:42.087"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:38.836" endtime="20220608 11:42:42.089"/>
+</test>
+<test id="s1-t8" name="Age_07 The customer put birthday with invalid month should error" line="74">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>01/13/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:42.096" level="INFO">Typing text '01/13/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:42.095" endtime="20220608 11:42:43.101"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:43.101" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:43.101" endtime="20220608 11:42:44.472"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:43.101" endtime="20220608 11:42:44.473"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:45.120" level="INFO">${result} = String '01/13/2010' was not recognized as a valid DateTime.</msg>
+<status status="PASS" starttime="20220608 11:42:44.474" endtime="20220608 11:42:45.120"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>String '01/13/2010' was not recognized as a valid DateTime.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:45.120" endtime="20220608 11:42:45.120"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:45.120" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:45.120" endtime="20220608 11:42:45.916"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:45.120" endtime="20220608 11:42:45.916"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:42.092" endtime="20220608 11:42:45.917"/>
+</test>
+<test id="s1-t9" name="Age_08 The customer put birthday with invalid deduction month should error" line="81">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>1/-99/2010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:45.920" level="INFO">Typing text '1/-99/2010' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:45.919" endtime="20220608 11:42:46.899"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:46.899" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:46.899" endtime="20220608 11:42:47.647"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:46.899" endtime="20220608 11:42:47.647"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:48.292" level="INFO">${result} = String '1/-99/2010' was not recognized as a valid DateTime.</msg>
+<status status="PASS" starttime="20220608 11:42:47.647" endtime="20220608 11:42:48.292"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>String '1/-99/2010' was not recognized as a valid DateTime.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:48.292" endtime="20220608 11:42:48.292"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:48.292" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:48.292" endtime="20220608 11:42:49.101"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:48.292" endtime="20220608 11:42:49.101"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:45.919" endtime="20220608 11:42:49.101"/>
+</test>
+<test id="s1-t10" name="Age_09 The customer put birthday with a valid month should work fine" line="88">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>12/12/2012</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:49.101" level="INFO">Typing text '12/12/2012' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:49.101" endtime="20220608 11:42:50.095"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:50.095" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:50.095" endtime="20220608 11:42:50.954"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:50.095" endtime="20220608 11:42:50.954"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:51.599" level="INFO">${result} = You're 9</msg>
+<status status="PASS" starttime="20220608 11:42:50.954" endtime="20220608 11:42:51.599"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>You're 9</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220608 11:42:51.599" endtime="20220608 11:42:51.599"/>
+</kw>
+<kw name="Home Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Home Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:51.599" level="INFO">Clicking element '//a[@class="navbar-brand"]'.</msg>
+<status status="PASS" starttime="20220608 11:42:51.599" endtime="20220608 11:42:52.410"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:51.599" endtime="20220608 11:42:52.410"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:49.101" endtime="20220608 11:42:52.410"/>
+</test>
+<test id="s1-t11" name="Age_10 The customer put birthday with the invalid year should error" line="95">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Input}</arg>
+<arg>12/12/2030</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:52.410" level="INFO">Typing text '12/12/2030' into text field 'id=Birthday'.</msg>
+<status status="PASS" starttime="20220608 11:42:52.410" endtime="20220608 11:42:53.425"/>
+</kw>
+<kw name="Calculate Button">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Calculate Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:53.425" level="INFO">Clicking element 'css=body &gt; div &gt; main &gt; form &gt; div:nth-child(2) &gt; input'.</msg>
+<status status="PASS" starttime="20220608 11:42:53.425" endtime="20220608 11:42:54.225"/>
+</kw>
+<status status="PASS" starttime="20220608 11:42:53.425" endtime="20220608 11:42:54.226"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${Display Result}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220608 11:42:54.891" level="INFO">${result} = You're -9</msg>
+<status status="PASS" starttime="20220608 11:42:54.227" endtime="20220608 11:42:54.891"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>String '12/12/2030' was not recognized as a valid DateTime.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220608 11:42:54.891" level="FAIL">'You're -9' does not contain 'String '12/12/2030' was not recognized as a valid DateTime.'</msg>
+<status status="FAIL" starttime="20220608 11:42:54.891" endtime="20220608 11:42:54.891"/>
+</kw>
+<kw name="Home Button">
+<status status="NOT RUN" starttime="20220608 11:42:54.891" endtime="20220608 11:42:54.926"/>
+</kw>
+<status status="FAIL" starttime="20220608 11:42:52.410" endtime="20220608 11:42:54.929">'You're -9' does not contain 'String '12/12/2030' was not recognized as a valid DateTime.'</status>
+</test>
+<status status="FAIL" starttime="20220608 11:42:18.994" endtime="20220608 11:42:54.931"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="10" fail="1" skip="0" id="s1" name="Age Calculator">Age Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
