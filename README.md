@@ -27,3 +27,8 @@ Test Cases
 10.Age_09 The customer put birthday with a valid month should work fine
 
 11.Age_10 The customer put birthday with the invalid year should error
+
+
+Run Program with VS Code
+
+age_calculator.robot
